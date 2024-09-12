@@ -1,50 +1,162 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --color-primary: #ddd;
+    --color-secondary: #333;
+    --color-accent: #ed64a6;
+    --color-accent-rgb: 213, 255, 0;
+
+    --background-color: #141800;
+    --background-twitch: var(--color-twitch-ice);
+
+    --color-twitch: #9146ff;
+    --color-twitch-ice: #f0f0ff;
+    --color-twitch-ice-rgb: 240, 240, 255;
+
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+    --bg-color: #13151a;
+    --color-gradient-1: #ed64a6;
+    --color-gradient-2: #b794f4;
+    --color-gradient-3: #ee4444;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg-color: #f0f0f0;
+    }
+  }
+
+  html {
+    /* background: var(--bg-color) url(/noise@2x.webp) repeat; */
+    background: var(--bg-color);
+    background-size: 224px;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family:
+      "Inter",
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      Segoe UI Symbol,
+      "Noto Color Emoji";
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    min-height: 100vh;
+  }
+
+  @media (prefers-color-scheme: light) {
+    html {
+      background: var(--bg-color);
+    }
+  }
+
+  body {
+    &:has(dialog[open]) {
+      overflow: hidden;
+    }
+  }
+
+  body:has(.side-menu:checked),
+  html:has(.side-menu:checked) {
+    overflow: hidden;
+  }
+
+  /* Hiding class, making content visible only to screen readers but not visually */
+  /* "sr" meaning "screen-reader" */
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    ::-webkit-scrollbar {
+      width: 10px;
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      /* background-color: theme("colors.primary"); */
+      background-color: #33333390;
+      border: 2px solid transparent;
+      background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:active {
+      background-color: #666;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--background-image);
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: var(--background-image);
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: theme("colors.primary") transparent;
+      scrollbar-width: thin;
+    }
+  }
+
+  .anchor-main-content {
+    pointer-events: none;
+  }
+
+  .anchor-main-content:focus {
+    pointer-events: all;
+  }
+  @media (prefers-color-scheme: dark) {
+    .maskimage {
+      mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+  }
 </style>

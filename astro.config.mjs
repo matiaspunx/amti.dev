@@ -1,11 +1,31 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
-import tailwind from '@astrojs/tailwind';
+import { defineConfig, passthroughImageService } from "astro/config";
+import vercel from "@astrojs/vercel/serverless";
+import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  build: {
+    inlineStylesheets: "always",
+  },
+  compressHTML: true,
+  prefetch: true,
+  devToolbar: {
+    enabled: false,
+  },
+  output: "server",
   adapter: vercel(),
-  integrations: [tailwind()]
+  integrations: [tailwind()],
+  vite: {
+    ssr: {
+      noExternal: ["path-to-regexp"],
+    },
+    build: {
+      cssMinify: "lightningcss",
+    },
+  },
+  images: {
+    domains: ["res.cloudinary.com", "lh3.googleusercontent.com"],
+    service: passthroughImageService(),
+  },
 });
