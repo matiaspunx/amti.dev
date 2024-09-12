@@ -24,7 +24,7 @@ export default defineConfig({
       cssMinify: "lightningcss",
     },
   },
-  images: {
+  image: {
     domains: ["res.cloudinary.com", "lh3.googleusercontent.com"],
     service: passthroughImageService(),
   },
