@@ -159,4 +159,13 @@ const { title } = Astro.props;
       mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
     }
   }
+
+  .dark-bg-radial-gradient {
+    background-image: radial-gradient(
+      closest-side,
+      rgba(76, 29, 149, 0.4),
+      rgba(76, 29, 149, 0.1),
+      transparent
+    ) !important;
+  }
 </style>
