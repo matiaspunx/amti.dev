@@ -1,0 +1,118 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+  bgcolor: string;
+  grad1: string;
+  grad2: string;
+  width: string;
+  height: string;
+  as?: string;
+  value?: string;
+  disabled?: boolean;
+  name?: string;
+  icon?: string;
+}
+
+const {
+  text,
+  href,
+  bgcolor,
+  grad1,
+  grad2,
+  width,
+  height,
+  as,
+  value,
+  disabled,
+  name,
+  icon,
+} = Astro.props;
+---
+
+{
+  as === "button" ? (
+    <button name={name} value={value} disabled={disabled} class="button">
+      <span>{text}</span>
+    </button>
+  ) : (
+    <a href={href} class="button">
+      <span>
+        <slot />
+        {text}
+      </span>
+    </a>
+  )
+}
+
+<style define:vars={{ bgcolor, grad1, grad2, width, height }}>
+  @property --angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0deg;
+  }
+
+  .button {
+    display: inline-flex;
+    width: var(--width);
+    height: var(--height);
+    position: relative;
+    border: none;
+    z-index: 1;
+    @apply rounded-lg;
+  }
+
+  .button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+      145deg,
+      var(--bgcolor),
+      var(--bgcolor) 50%,
+      var(--bgcolor)
+    );
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    @apply px-3.5 py-2 font-semibold text-white;
+    &:hover {
+      @apply bg-gradient-to-r from-[--grad1] to-[--grad2];
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  .button::before,
+  .button::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    --angle: 0deg;
+    background-image: conic-gradient(
+      from var(--angle),
+      var(--grad1),
+      var(--grad2),
+      var(--grad1)
+    );
+    animation: autoRotate 2s linear infinite;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 2px;
+    box-sizing: unset;
+  }
+
+  .button::after {
+    filter: blur(10px);
+  }
+
+  @keyframes autoRotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+</style>

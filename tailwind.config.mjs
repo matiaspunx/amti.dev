@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        mona: ["Mona Sans", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: "var(--color-primary)",
