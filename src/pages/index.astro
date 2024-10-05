@@ -6,15 +6,19 @@ import AstroIcon from "@/components/icons/AstroIcon.astro";
 import NextIcon from "@/components/icons/NextIcon.astro";
 import ReactLogo from "@/components/icons/ReactLogo.astro";
 import TailwindIcon from "@/components/icons/TailwindIcon.astro";
-import CssIcon from "@/components/icons/CssIcon.astro";
-import HtmlIcon from "@/components/icons/HtmlIcon.astro";
+import TwitchIcon from "@/components/icons/TwitchIcon.astro";
+import Github from "@/components/icons/Github.astro";
+import GithubIcon from "@/components/icons/GithubIcon.astro";
+import YoutubeIcon from "@/components/icons/YoutubeIcon.astro";
+/* import CssIcon from "@/components/icons/CssIcon.astro";
+import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
 ---
 
 <Layout title="Hola, soy amti">
   <header>
     <div class="flex flex-col items-center space-y-4">
       <h1
-        class="font-mona inline-block bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-100 bg-clip-text text-4xl font-extrabold leading-tight tracking-tight text-transparent md:text-7xl lg:text-9xl lg:leading-tight"
+        class="inline-block bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-100 bg-clip-text font-mona text-4xl font-extrabold leading-tight tracking-tight text-transparent md:text-7xl lg:text-9xl lg:leading-tight"
       >
         Hola, soy <span
           class="inline-block rounded-lg bg-pink-500/50 px-3 transition hover:bg-pink-500/30"
@@ -28,10 +32,11 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro";
       </h2>
     </div>
   </header>
+
   <main>
     <section
       id="about"
-      class="mx-auto my-8 grid max-w-3xl grid-cols-1 gap-2 rounded-lg border border-neutral-950/60 bg-neutral-950/40 p-5 lg:grid-cols-3"
+      class="mx-auto my-8 grid max-w-3xl grid-cols-1 gap-2 rounded-lg border border-neutral-950/70 bg-neutral-950/70 p-5 lg:grid-cols-3"
     >
       <div
         class="order-2 col-span-1 flex flex-col items-center justify-center space-y-4 lg:order-1 lg:col-span-2 lg:items-start"
@@ -42,11 +47,11 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro";
         <p
           class="text-balance text-center text-base text-neutral-100 lg:text-left"
         >
-          Me gusta crear aplicaciones web y también me gusta ayudar a otros a
-          aprender y crecer.
+          Me gusta crear aplicaciones web y también ayudar a otros a aprender y
+          crecer.
         </p>
         <p class="text-balance text-base text-neutral-100">
-          Trabajo con las siguientes tecnologías:
+          Por ahora trabajo con las siguientes tecnologías:
         </p>
       </div>
       <div
@@ -55,9 +60,7 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro";
         <Avatar />
       </div>
       <div class="order-3 col-span-1 mt-6 lg:order-3 lg:col-span-3 lg:mt-4">
-        <div
-          class="flex flex-wrap justify-center gap-5 lg:justify-between lg:gap-0"
-        >
+        <div class="flex flex-wrap justify-center gap-5">
           <ButtonShine
             text="Astro"
             href="https://astro.build/"
@@ -95,7 +98,7 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro";
             height="fit-content"
             ><TailwindIcon class="mr-2 h-6 w-6" /></ButtonShine
           >
-          <ButtonShine
+          <!-- <ButtonShine
             text="CSS"
             href="https://developer.mozilla.org/es/docs/Web/CSS"
             bgcolor="#1b1930"
@@ -112,17 +115,152 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro";
             grad2="#f7814e"
             width="fit-content"
             height="fit-content"><HtmlIcon class="mr-2 h-6 w-6" /></ButtonShine
+          > -->
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid mt-24">
+      <h2
+        class="bg-gradient-to-r from-pink-100 via-purple-500 to-indigo-600 bg-clip-text text-center font-mona text-2xl font-semibold text-transparent lg:text-4xl"
+      >
+        Voy a ayudarte a mejorar en ✨
+      </h2>
+      <div
+        class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/90 bg-neutral-950/70 p-5 md:grid-cols-2 lg:grid-cols-3"
+      >
+        <div
+          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
+        >
+          <h3 class="text-2xl font-semibold text-indigo-200">
+            <span class="badge">CSS</span>
+          </h3>
+          <p class="text-balance text-base text-neutral-100">
+            Vamos a aprender sobre CSS, el lenguaje de estilo de la web.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
+        >
+          <h3 class="text-2xl font-semibold text-indigo-200">
+            <span class="badge">HTML</span>
+          </h3>
+          <p class="text-balance text-base text-neutral-100">
+            Vamos a aprender sobre HTML, el lenguaje de marcado de la web.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
+        >
+          <h3 class="text-2xl font-semibold text-indigo-200">
+            <span class="badge">JavaScript</span>
+          </h3>
+          <p class="text-balance text-base text-neutral-100">
+            Vamos a aprender sobre JavaScript, el lenguaje de programación de la
+            web.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
+        >
+          <h3 class="text-2xl font-semibold text-indigo-200">
+            <span class="badge">React</span>
+          </h3>
+          <p class="text-balance text-base text-neutral-100">
+            Vamos a aprender sobre React, un framework de JavaScript para
+            construir interfaces de usuario.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
+        >
+          <h3 class="text-2xl font-semibold text-indigo-200">
+            <span class="badge">Next.js</span>
+          </h3>
+          <p class="text-balance text-base text-neutral-100">
+            Vamos a aprender sobre Next.js, un framework de React para construir
+            interfaces de usuario.
+          </p>
+        </div>
+        <div
+          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
+        >
+          <h3 class="text-2xl font-semibold text-indigo-200">
+            <span class="badge">Astro</span>
+          </h3>
+          <p class="text-balance text-base text-neutral-100">
+            Vamos a aprender sobre Astro, un framework para construir sitios web
+            estáticos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid mt-24">
+      <h2
+        class="bg-gradient-to-r from-pink-100 via-purple-500 to-indigo-600 bg-clip-text text-center font-mona text-2xl font-semibold text-transparent lg:text-4xl"
+      >
+        Proximamente en noviembre
+      </h2>
+      <div
+        class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/70 bg-pink-400/50 p-5"
+      >
+        <p class="text-center text-xl text-white">
+          ¡Curso de Astro completamente GRATIS y desde 0 por Twitch!
+        </p>
+      </div>
+    </section>
+
+    <section class="content-grid mt-24">
+      <h2
+        class="bg-gradient-to-r from-pink-100 via-purple-500 to-indigo-600 bg-clip-text text-center font-mona text-2xl font-semibold text-transparent lg:text-4xl"
+      >
+        Me encuentran en
+      </h2>
+      <div
+        class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/70 bg-neutral-950/40 p-5"
+      >
+        <div class="flex items-center justify-center gap-x-4">
+          <a
+            href="https://www.twitch.tv/amtidev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex flex-col items-center justify-center rounded-md bg-twitch px-4 py-2 text-white transition hover:scale-105"
+          >
+            <TwitchIcon class="h-24 w-24" />
+            Twitch</a
+          >
+          <a
+            href="https://github.com/matiaspunx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-white transition hover:scale-105"
+          >
+            <GithubIcon class="h-24 w-24" />
+            GitHub</a
+          >
+          <a
+            href="https://youtube.com/amtidev"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex flex-col items-center justify-center rounded-md bg-red-700 px-4 py-2 text-white transition hover:scale-105"
+          >
+            <YoutubeIcon class="h-24 w-24" />
+            YouTube</a
           >
         </div>
       </div>
     </section>
   </main>
+
+  <footer class="content-grid mt-24 border-t border-neutral-200/20 py-12">
+    <p class="text-center text-white">
+      Hecho con ♥️ y Astro 🚀 por amti - amti.punx[at]gmail.com
+    </p>
+  </footer>
 </Layout>
 <style>
   .badge {
-    @apply inline-block cursor-pointer rounded-md border border-neutral-700 px-2 py-1 transition;
-    &:hover {
-      @apply scale-105 border-neutral-500;
-    }
+    @apply inline-block cursor-pointer rounded-md border border-purple-400 px-2 py-1 transition group-hover:rotate-2 group-hover:scale-125 group-hover:border-purple-500 group-hover:bg-purple-600;
   }
 </style>
