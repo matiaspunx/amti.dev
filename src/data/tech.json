@@ -1,0 +1,26 @@
+[
+  {
+    "title": "CSS",
+    "description": "Vamos a conocemos y aprendemos CSS, el lenguaje de estilo de la web."
+  },
+  {
+    "title": "HTML",
+    "description": "Vamos a aprender sobre HTML, el lenguaje de marcado de la web."
+  },
+  {
+    "title": "JavaScript",
+    "description": "Vamos a aprender sobre JavaScript, el lenguaje de programación de la web."
+  },
+  {
+    "title": "Astro",
+    "description": "Vamos a aprender sobre Astro, un framework de React para construir aplicaciones web."
+  },
+  {
+    "title": "React",
+    "description": "Vamos a aprender sobre React, un framework de JavaScript para construir interfaces de usuario."
+  },
+  {
+    "title": "Next.js",
+    "description": "Vamos a aprender sobre Next.js, un framework de React para construir aplicaciones web."
+  }
+]

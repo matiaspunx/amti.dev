@@ -12,6 +12,8 @@ import GithubIcon from "@/components/icons/GithubIcon.astro";
 import YoutubeIcon from "@/components/icons/YoutubeIcon.astro";
 /* import CssIcon from "@/components/icons/CssIcon.astro";
 import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
+import data from "@/data/tech.json";
+import TechCard from "@/components/TechCard.astro";
 ---
 
 <Layout title="Hola, soy amti">
@@ -42,7 +44,7 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
         class="order-2 col-span-1 flex flex-col items-center justify-center space-y-4 lg:order-1 lg:col-span-2 lg:items-start"
       >
         <h2 class="text-2xl font-semibold text-indigo-200">
-          Soy desarrollador web y front-end
+          Soy desarrollador frontend
         </h2>
         <p
           class="text-balance text-center text-base text-neutral-100 lg:text-left"
@@ -98,24 +100,6 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
             height="fit-content"
             ><TailwindIcon class="mr-2 h-6 w-6" /></ButtonShine
           >
-          <!-- <ButtonShine
-            text="CSS"
-            href="https://developer.mozilla.org/es/docs/Web/CSS"
-            bgcolor="#1b1930"
-            grad1="#2849e4"
-            grad2="#1b84c1"
-            width="fit-content"
-            height="fit-content"><CssIcon class="mr-2 h-6 w-6" /></ButtonShine
-          >
-          <ButtonShine
-            text="HTML"
-            href="https://developer.mozilla.org/es/docs/Web/HTML"
-            bgcolor="#1b1930"
-            grad1="#dc4d24"
-            grad2="#f7814e"
-            width="fit-content"
-            height="fit-content"><HtmlIcon class="mr-2 h-6 w-6" /></ButtonShine
-          > -->
         </div>
       </div>
     </section>
@@ -124,75 +108,12 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
       <h2
         class="bg-gradient-to-r from-pink-100 via-purple-500 to-indigo-600 bg-clip-text text-center font-mona text-2xl font-semibold text-transparent lg:text-4xl"
       >
-        Voy a ayudarte a mejorar en ✨
+        Vamos a aprender y mejorar en ✨
       </h2>
       <div
         class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/90 bg-neutral-950/70 p-5 md:grid-cols-2 lg:grid-cols-3"
       >
-        <div
-          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
-        >
-          <h3 class="text-2xl font-semibold text-indigo-200">
-            <span class="badge">CSS</span>
-          </h3>
-          <p class="text-balance text-base text-neutral-100">
-            Vamos a aprender sobre CSS, el lenguaje de estilo de la web.
-          </p>
-        </div>
-        <div
-          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
-        >
-          <h3 class="text-2xl font-semibold text-indigo-200">
-            <span class="badge">HTML</span>
-          </h3>
-          <p class="text-balance text-base text-neutral-100">
-            Vamos a aprender sobre HTML, el lenguaje de marcado de la web.
-          </p>
-        </div>
-        <div
-          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
-        >
-          <h3 class="text-2xl font-semibold text-indigo-200">
-            <span class="badge">JavaScript</span>
-          </h3>
-          <p class="text-balance text-base text-neutral-100">
-            Vamos a aprender sobre JavaScript, el lenguaje de programación de la
-            web.
-          </p>
-        </div>
-        <div
-          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
-        >
-          <h3 class="text-2xl font-semibold text-indigo-200">
-            <span class="badge">React</span>
-          </h3>
-          <p class="text-balance text-base text-neutral-100">
-            Vamos a aprender sobre React, un framework de JavaScript para
-            construir interfaces de usuario.
-          </p>
-        </div>
-        <div
-          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
-        >
-          <h3 class="text-2xl font-semibold text-indigo-200">
-            <span class="badge">Next.js</span>
-          </h3>
-          <p class="text-balance text-base text-neutral-100">
-            Vamos a aprender sobre Next.js, un framework de React para construir
-            interfaces de usuario.
-          </p>
-        </div>
-        <div
-          class="group flex flex-col items-center justify-center space-y-4 rounded-md bg-purple-500/90 p-4 text-center transition hover:bg-purple-600/90"
-        >
-          <h3 class="text-2xl font-semibold text-indigo-200">
-            <span class="badge">Astro</span>
-          </h3>
-          <p class="text-balance text-base text-neutral-100">
-            Vamos a aprender sobre Astro, un framework para construir sitios web
-            estáticos.
-          </p>
-        </div>
+        {data.map((tech) => <TechCard tech={tech} />)}
       </div>
     </section>
 
@@ -203,10 +124,14 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
         Proximamente en noviembre
       </h2>
       <div
-        class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/70 bg-pink-400/50 p-5"
+        class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/70 bg-pink-400/50 px-3 py-5"
       >
-        <p class="text-center text-xl text-white">
-          ¡Curso de Astro completamente GRATIS y desde 0 por Twitch!
+        <p class="text-center text-2xl text-white">
+          ¡Curso de <strong>Astro🚀</strong> completamente GRATIS y desde 0 por <a
+            href="#"
+            class="inline-block rounded-md bg-twitch px-4 py-2 text-white transition hover:scale-105"
+            >Twitch</a
+          >
         </p>
       </div>
     </section>
@@ -220,7 +145,7 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
       <div
         class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/70 bg-neutral-950/40 p-5"
       >
-        <div class="flex items-center justify-center gap-x-4">
+        <div class="flex items-center justify-center gap-x-8">
           <a
             href="https://www.twitch.tv/amtidev"
             target="_blank"
@@ -259,8 +184,3 @@ import HtmlIcon from "@/components/icons/HtmlIcon.astro"; */
     </p>
   </footer>
 </Layout>
-<style>
-  .badge {
-    @apply inline-block cursor-pointer rounded-md border border-purple-400 px-2 py-1 transition group-hover:rotate-2 group-hover:scale-125 group-hover:border-purple-500 group-hover:bg-purple-600;
-  }
-</style>
