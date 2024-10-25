@@ -13,34 +13,51 @@ import YoutubeIcon from "./icons/YoutubeIcon.astro";
   <div
     class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-indigo-700/70 p-5 dark:border-indigo-700/20"
   >
-    <div class="flex flex-wrap items-center justify-center gap-x-8 space-y-6">
+    <div class="grid grid-cols-3 gap-x-2 md:gap-x-8">
       <a
         href="https://www.twitch.tv/amtidev"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex flex-col items-center justify-center rounded-md bg-twitch px-4 py-2 text-white transition hover:scale-105"
+        class="link-icon twitch"
       >
-        <TwitchIcon class="h-24 w-24" />
-        Twitch</a
+        <TwitchIcon class="icon" />
+        <span>Twitch</span></a
       >
       <a
         href="https://github.com/matiaspunx"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-white transition hover:scale-105"
+        class="link-icon github"
       >
-        <GithubIcon class="h-24 w-24" />
-        GitHub</a
+        <GithubIcon class="icon" />
+        <span>GitHub</span></a
       >
       <a
         href="https://youtube.com/amtidev"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex flex-col items-center justify-center rounded-md bg-red-700 px-4 py-2 text-white transition hover:scale-105"
+        class="link-icon youtube"
       >
-        <YoutubeIcon class="h-24 w-24" />
-        YouTube</a
+        <YoutubeIcon class="icon" />
+        <span>YouTube</span></a
       >
     </div>
   </div>
 </section>
+<style>
+  .link-icon {
+    @apply inline-flex flex-col items-center justify-center rounded-md bg-twitch px-2 py-2 text-white transition hover:scale-105 md:py-8;
+  }
+  .twitch {
+    @apply bg-twitch;
+  }
+  .github {
+    @apply bg-black;
+  }
+  .youtube {
+    @apply bg-red-700;
+  }
+  .icon {
+    @apply h-12 w-auto md:h-24;
+  }
+</style>
