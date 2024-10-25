@@ -1,4 +1,6 @@
 ---
+import Footer from "@/components/Footer.astro";
+
 interface Props {
   title: string;
 }
@@ -12,7 +14,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,6 +33,7 @@ const { title } = Astro.props;
   <body>
     <div class="container mx-auto mt-4 lg:max-w-6xl">
       <slot />
+      <Footer />
     </div>
   </body>
 </html>
@@ -57,7 +60,7 @@ const { title } = Astro.props;
       rgb(var(--accent-light)) 30%,
       white 60%
     );
-    --bg-color: #13151a;
+    --bg-color: #111111;
     --color-gradient-1: #ed64a6;
     --color-gradient-2: #b794f4;
     --color-gradient-3: #ee4444;
@@ -77,12 +80,68 @@ const { title } = Astro.props;
     font-stretch: 75% 125%;
   }
 
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-stretch: 75% 125%;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-stretch: 75% 125%;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-stretch: 75% 125%;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-Italic.ttf") format("truetype");
+    font-weight: 400;
+    font-stretch: 75% 125%;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-BoldItalic.ttf") format("truetype");
+    font-weight: 700;
+    font-stretch: 75% 125%;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-SemiBoldItalic.ttf") format("truetype");
+    font-weight: 600;
+    font-stretch: 75% 125%;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-stretch: 75% 125%;
+  }
+
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/fonts/IBMPlexMono-MediumItalic.ttf") format("truetype");
+    font-weight: 500;
+    font-stretch: 75% 125%;
+    font-style: italic;
+  }
+
   html {
     background-color: var(--bg-color);
-    background-image: url(/noise-extra.webp), url(/bg.webp);
-    background-repeat: repeat, no-repeat;
-    background-size: 224px, cover;
-    background-blend-mode: darken, soft-light;
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
 
@@ -167,6 +226,15 @@ const { title } = Astro.props;
     }
   }
 
+  @media (max-width: 540px) {
+    @supports selector(::-webkit-scrollbar) {
+      ::-webkit-scrollbar {
+        display: none;
+        width: 0;
+      }
+    }
+  }
+
   .anchor-main-content {
     pointer-events: none;
   }
@@ -192,8 +260,8 @@ const { title } = Astro.props;
   /* content grid */
   .content-grid {
     --padding-inline: 2rem;
-    --content-max-width: 80ch;
-    --breackout-max-width: 95ch;
+    --content-max-width: 90ch;
+    --breackout-max-width: 100ch;
     --breackout-size: calc(
       (var(--breackout-max-width) - var(--content-max-width)) / 2
     );

@@ -1,0 +1,46 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import TwitchIcon from "./icons/TwitchIcon.astro";
+import YoutubeIcon from "./icons/YoutubeIcon.astro";
+---
+
+<section class="content-grid mt-24">
+  <h2
+    class="bg-gradient-to-r from-pink-100 via-purple-500 to-purple-900 bg-clip-text text-center font-mono text-2xl font-semibold text-transparent lg:text-4xl"
+  >
+    Me encuentran en
+  </h2>
+  <div
+    class="mt-4 grid grid-cols-1 gap-4 rounded-lg border border-neutral-950/70 bg-neutral-950/40 p-5"
+  >
+    <div class="flex items-center justify-center gap-x-8">
+      <a
+        href="https://www.twitch.tv/amtidev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex flex-col items-center justify-center rounded-md bg-twitch px-4 py-2 text-white transition hover:scale-105"
+      >
+        <TwitchIcon class="h-24 w-24" />
+        Twitch</a
+      >
+      <a
+        href="https://github.com/matiaspunx"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex flex-col items-center justify-center rounded-md bg-black px-4 py-2 text-white transition hover:scale-105"
+      >
+        <GithubIcon class="h-24 w-24" />
+        GitHub</a
+      >
+      <a
+        href="https://youtube.com/amtidev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex flex-col items-center justify-center rounded-md bg-red-700 px-4 py-2 text-white transition hover:scale-105"
+      >
+        <YoutubeIcon class="h-24 w-24" />
+        YouTube</a
+      >
+    </div>
+  </div>
+</section>
