@@ -1,0 +1,21 @@
+---
+import IconGit from "./icons/IconGit.astro";
+import IconBlog from "./icons/IconBlog.astro";
+
+const { title } = Astro.props;
+
+let ComponentTitle;
+
+if (title === "blog") {
+  ComponentTitle = IconBlog;
+}
+if (title === "repos") {
+  ComponentTitle = IconGit;
+}
+---
+
+<h2 class="flex items-center gap-x-1 font-mono text-2xl text-white">
+  {ComponentTitle ? <ComponentTitle class="mr-2 h-6 w-auto" /> : null}<span
+    ><slot /></span
+  >
+</h2>

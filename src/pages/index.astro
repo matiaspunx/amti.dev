@@ -4,15 +4,13 @@ import GHRepos from "@/components/GHRepos.astro";
 import PreFooterRRSS from "@/components/PreFooterRRSS.astro";
 import Header from "@/components/Header.astro";
 import Intro from "@/components/Intro.astro";
+import BlogPosts from "@/components/BlogPosts.astro";
 ---
 
 <Layout title="Amti">
-  <main
-    class="content-grid relative mt-16 overflow-hidden before:absolute before:start-1/2 before:top-0 before:-z-[1] before:size-full before:-translate-x-1/4 before:-translate-y-3 before:transform before:bg-[url('/squared-bg-element.svg')] before:bg-top before:bg-no-repeat md:mt-10 dark:before:bg-[url('/squared-bg-element-dark.svg')]"
-  >
-    <Header />
-    <Intro />
-    <GHRepos />
-    <PreFooterRRSS />
-  </main>
+  <Header />
+  <Intro />
+  <GHRepos />
+  <BlogPosts />
+  <PreFooterRRSS />
 </Layout>

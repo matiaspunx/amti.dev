@@ -1,0 +1,45 @@
+---
+import IconVerMas from "./icons/IconVerMas.astro";
+
+const { post } = Astro.props;
+const { data } = post;
+const {
+  title,
+  description,
+  date,
+  isDraft,
+  sordOrder,
+  author,
+  image,
+  tags,
+  footnote,
+  relatedPosts,
+} = data;
+
+console.log(post, data);
+---
+
+<a
+  href={`/blog/${post.slug}`}
+  class="group relative flex items-center overflow-hidden rounded-lg bg-gradient-to-r from-indigo-600 to-purple-800 px-4 py-8 font-mono text-lg font-semibold text-indigo-200 transition hover:from-purple-800 hover:to-indigo-600"
+>
+  <div
+    class="absolute flex -translate-x-8 items-center gap-x-2 transition group-hover:translate-x-0"
+  >
+    <span><IconVerMas class="h-6 w-auto" /></span>
+    <span class="title">{title}</span>
+  </div>
+</a>
+<style>
+  .title {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  @media screen and (min-width: 768px) {
+    .title {
+      width: auto;
+    }
+  }
+</style>

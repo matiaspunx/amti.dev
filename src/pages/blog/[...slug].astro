@@ -1,0 +1,85 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import BlogLayout from "@/layouts/BlogLayout.astro";
+
+const { slug } = Astro.params;
+
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+
+const entry = await getEntry("blog", slug);
+
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await entry.render();
+---
+
+<BlogLayout title={entry?.data.title}>
+  <div class="blog-post mt-10">
+    <h2
+      class="text-balance font-mono text-3xl font-bold text-indigo-300 md:text-5xl"
+    >
+      {entry?.data.title}
+    </h2>
+    <div class="mt-8 rounded-lg">
+      <img
+        src={`/${entry?.data?.image?.src}`}
+        alt={entry?.data?.image?.alt}
+        class="w-full rounded-lg"
+      />
+    </div>
+    <div class="post-content my-6 space-y-6 text-white">
+      <Content />
+    </div>
+    <div
+      class="mt-12 flex flex-wrap items-center justify-center space-y-8 border-t border-dashed border-indigo-700/30 pt-12"
+    >
+      <a
+        href="/"
+        class="rounded-md border border-indigo-500 px-4 py-2 text-sm text-white transition hover:bg-indigo-500"
+        >&larr; Volver al blog</a
+      >
+    </div>
+  </div>
+</BlogLayout>
+<style>
+  .post-content {
+    h2,
+    h3,
+    h4 {
+      @apply font-mono text-indigo-300;
+    }
+    h2 {
+      @apply text-2xl;
+    }
+    h3 {
+      @apply text-xl text-pink-400;
+    }
+    h4 {
+      @apply text-lg text-pink-500;
+    }
+    p {
+      @apply text-balance font-mono;
+    }
+    hr {
+      @apply border-dashed border-purple-700/30;
+    }
+    ul {
+      @apply ml-6 list-disc space-y-1;
+      li {
+        @apply text-balance font-mono;
+      }
+    }
+    a:link,
+    a:visited {
+      @apply text-purple-400 transition;
+    }
+    a:hover,
+    a:active {
+      @apply text-purple-300 underline;
+    }
+  }
+</style>

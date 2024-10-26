@@ -1,0 +1,19 @@
+{
+  "name": "Amti",
+  "portfolio": "https://amti.dev",
+  "image": "/amti.jpg",
+  "rrss": [
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/amti_amti"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/matiaspunx"
+    },
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/in/matiaspunx/"
+    }
+  ]
+}

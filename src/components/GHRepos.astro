@@ -1,14 +1,16 @@
 ---
 import RepoCard from "./RepoCard.astro";
 import { getLatestRepos } from "@/utils/github-functions";
+import SectionTitles from "./SectionTitles.astro";
 
 const repos = await getLatestRepos();
 ---
 
-<section>
-  <nav
-    class="mt-8 grid grid-cols-1 gap-4 rounded-lg border border-indigo-700/70 p-4 lg:grid-cols-3 dark:border-indigo-700/20"
-  >
+<section
+  class="mt-8 space-y-6 rounded-lg border border-indigo-700/70 p-4 dark:border-indigo-700/20"
+>
+  <SectionTitles title="repos">Repos</SectionTitles>
+  <nav class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
     {
       repos &&
         repos.map((repo: any, index) => <RepoCard repo={repo} index={index} />)
