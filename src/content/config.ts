@@ -26,7 +26,7 @@ const authors = defineCollection({
   schema: z.object({
     name: z.string(),
     portfolio: z.string().url().optional(),
-    image: z.string().url().optional(),
+    image: z.string().optional(),
     rrss: z
       .array(
         z.object({
