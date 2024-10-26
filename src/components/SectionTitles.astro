@@ -4,7 +4,7 @@ import IconBlog from "./icons/IconBlog.astro";
 
 const { title } = Astro.props;
 
-let ComponentTitle;
+let ComponentTitle: any;
 
 if (title === "blog") {
   ComponentTitle = IconBlog;

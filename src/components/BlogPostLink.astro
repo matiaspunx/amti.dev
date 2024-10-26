@@ -3,18 +3,7 @@ import IconVerMas from "./icons/IconVerMas.astro";
 
 const { post } = Astro.props;
 const { data } = post;
-const {
-  title,
-  description,
-  date,
-  isDraft,
-  sordOrder,
-  author,
-  image,
-  tags,
-  footnote,
-  relatedPosts,
-} = data;
+const { title } = data;
 
 console.log(post, data);
 ---

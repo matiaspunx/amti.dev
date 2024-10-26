@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 import BlogPostLink from "./BlogPostLink.astro";
 import SectionTitles from "./SectionTitles.astro";
 const AllBlogPosts = await getCollection("blog", ({ data }) => {

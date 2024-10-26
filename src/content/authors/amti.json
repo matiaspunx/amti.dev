@@ -1,12 +1,7 @@
 {
   "name": "Amti",
   "portfolio": "https://amti.dev",
-  "image": [
-    {
-      "src": "/amti.jpg",
-      "alt": "Amti"
-    }
-  ],
+  "image": "/amti.jpg",
   "rrss": [
     {
       "name": "Twitter",
